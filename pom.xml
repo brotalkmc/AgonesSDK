@@ -42,13 +42,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty</artifactId>
-            <version>1.37.0</version>
-            <scope>runtime</scope>
-        </dependency>
-
         <!-- Required post Java 11 -->
         <dependency>
             <groupId>javax.annotation</groupId>
