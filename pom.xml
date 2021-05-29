@@ -21,7 +21,6 @@
         </pluginRepository>
     </pluginRepositories>
 
-
     <distributionManagement>
         <repository>
             <id>github</id>
