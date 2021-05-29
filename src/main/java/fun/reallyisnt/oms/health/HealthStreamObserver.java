@@ -6,6 +6,7 @@ public class HealthStreamObserver implements io.grpc.stub.StreamObserver<agones.
 
     @Override
     public void onNext(Sdk.Empty value) {
+
     }
 
     @Override

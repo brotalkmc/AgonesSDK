@@ -56,7 +56,7 @@ public class AgonesSDK {
      * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#health">https://agones.dev/site/docs/guides/client-sdks/</a>
      */
     public void health() {
-        asyncStub.health(new HealthStreamObserver());
+        asyncStub.health(new HealthStreamObserver()).onNext(Sdk.Empty.newBuilder().build());
     }
 
     /**
