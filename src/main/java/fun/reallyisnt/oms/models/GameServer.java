@@ -28,4 +28,13 @@ public class GameServer {
     public ObjectMeta getMeta() {
         return meta;
     }
+
+    @Override
+    public String toString() {
+        return "GameServer{" +
+                "spec=" + spec +
+                ", meta=" + meta +
+                ", status=" + status +
+                '}';
+    }
 }

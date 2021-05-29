@@ -17,4 +17,12 @@ public class Port {
     public int getPort() {
         return port;
     }
+
+    @Override
+    public String toString() {
+        return "Port{" +
+                "name='" + name + '\'' +
+                ", port=" + port +
+                '}';
+    }
 }

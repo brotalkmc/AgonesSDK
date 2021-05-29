@@ -33,4 +33,14 @@ public class Health {
     public int getInitialDelaySeconds() {
         return initialDelaySeconds;
     }
+
+    @Override
+    public String toString() {
+        return "Health{" +
+                "disabled=" + disabled +
+                ", periodSeconds=" + periodSeconds +
+                ", failureThreshold=" + failureThreshold +
+                ", initialDelaySeconds=" + initialDelaySeconds +
+                '}';
+    }
 }

@@ -72,4 +72,19 @@ public class ObjectMeta {
     public Map<String, String> getLabels() {
         return labels;
     }
+
+    @Override
+    public String toString() {
+        return "ObjectMeta{" +
+                "name='" + name + '\'' +
+                ", namespace='" + namespace + '\'' +
+                ", uid='" + uid + '\'' +
+                ", resourceVersion='" + resourceVersion + '\'' +
+                ", generation=" + generation +
+                ", creationTimestamp=" + creationTimestamp +
+                ", deletionTimestamp=" + deletionTimestamp +
+                ", annotations=" + annotations +
+                ", labels=" + labels +
+                '}';
+    }
 }

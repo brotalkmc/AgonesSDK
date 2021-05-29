@@ -13,4 +13,11 @@ public class GameServerSpec {
     public Health getHealth() {
         return health;
     }
+
+    @Override
+    public String toString() {
+        return "GameServerSpec{" +
+                "health=" + health +
+                '}';
+    }
 }

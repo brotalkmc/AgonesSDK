@@ -30,4 +30,13 @@ public class Status {
     public List<Port> getPorts() {
         return ports;
     }
+
+    @Override
+    public String toString() {
+        return "Status{" +
+                "state='" + state + '\'' +
+                ", address='" + address + '\'' +
+                ", ports=" + ports +
+                '}';
+    }
 }

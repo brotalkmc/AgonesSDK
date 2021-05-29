@@ -3,6 +3,7 @@ package fun.reallyisnt.oms;
 import agones.dev.sdk.SDKGrpc;
 import agones.dev.sdk.Sdk;
 import fun.reallyisnt.oms.alpha.Alpha;
+import fun.reallyisnt.oms.health.HealthStreamObserver;
 import fun.reallyisnt.oms.models.GameServer;
 import fun.reallyisnt.oms.models.StreamObserverWrapper;
 import io.grpc.Channel;
@@ -33,8 +34,8 @@ public class AgonesSDK {
 
     public AgonesSDK(String host, int port) {
         this.channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
-        this.stub = SDKGrpc.newBlockingStub(channel);
         this.asyncStub = SDKGrpc.newStub(channel);
+        this.stub = SDKGrpc.newBlockingStub(channel);
         this.alpha = new Alpha(channel);
     }
 
@@ -46,6 +47,16 @@ public class AgonesSDK {
      */
     public void ready() {
         stub.ready(Sdk.Empty.getDefaultInstance());
+    }
+
+    /**
+     * This method sends a single ping to designate that the
+     * Game Server is alive and healthy.
+     *
+     * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#health">https://agones.dev/site/docs/guides/client-sdks/</a>
+     */
+    public void health() {
+        asyncStub.health(new HealthStreamObserver());
     }
 
     /**
