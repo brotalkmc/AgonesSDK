@@ -8,6 +8,7 @@ on:
 jobs:
   maven:
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
       packages: write
@@ -26,4 +27,4 @@ jobs:
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOK0EN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
