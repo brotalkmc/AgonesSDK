@@ -8,6 +8,8 @@
     <artifactId>agonessdk</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>AgonesSDK</name>
+
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
