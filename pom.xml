@@ -6,7 +6,7 @@
 
     <groupId>fun.reallyisnt.oms</groupId>
     <artifactId>agonessdk</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <name>AgonesSDK</name>
 
@@ -67,6 +67,7 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.37.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Required post Java 11 -->
