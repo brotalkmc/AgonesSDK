@@ -7,6 +7,7 @@ import fun.reallyisnt.oms.health.HealthStreamObserver;
 import fun.reallyisnt.oms.models.GameServer;
 import fun.reallyisnt.oms.models.StreamObserverWrapper;
 import io.grpc.Channel;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
@@ -14,6 +15,7 @@ public class AgonesSDK {
 
     private final SDKGrpc.SDKBlockingStub stub;
     private final SDKGrpc.SDKStub asyncStub;
+    private final ManagedChannel channel;
 
     private final Alpha alpha;
 
@@ -30,7 +32,7 @@ public class AgonesSDK {
     }
 
     public AgonesSDK(String host, int port) {
-        Channel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
+        this.channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
         this.asyncStub = SDKGrpc.newStub(channel);
         this.stub = SDKGrpc.newBlockingStub(channel);
         this.alpha = new Alpha(channel);
@@ -133,6 +135,20 @@ public class AgonesSDK {
      */
     public void setAnnotation(String annotation, String value) {
         stub.setAnnotation(Sdk.KeyValue.newBuilder().setKey(annotation).setValue(value).build());
+    }
+
+    /**
+     * This shuts down the connection to gRPC
+     *
+     * @param shutdownNow whether to terminate this
+     *                    connection instantly
+     */
+    public void shutdownConnection(boolean shutdownNow) {
+        if(shutdownNow) {
+            channel.shutdown();
+        } else {
+            channel.shutdownNow();
+        }
     }
 
     public Alpha alpha() {
