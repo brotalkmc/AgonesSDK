@@ -12,10 +12,7 @@ import io.grpc.stub.StreamObserver;
 
 public class AgonesSDK {
 
-    private final Channel channel;
     private final SDKGrpc.SDKBlockingStub stub;
-
-    // Used to have StreamObservers for watchGameServer call
     private final SDKGrpc.SDKStub asyncStub;
 
     private final Alpha alpha;
@@ -33,7 +30,7 @@ public class AgonesSDK {
     }
 
     public AgonesSDK(String host, int port) {
-        this.channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
+        Channel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
         this.asyncStub = SDKGrpc.newStub(channel);
         this.stub = SDKGrpc.newBlockingStub(channel);
         this.alpha = new Alpha(channel);
@@ -56,7 +53,9 @@ public class AgonesSDK {
      * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#health">https://agones.dev/site/docs/guides/client-sdks/</a>
      */
     public void health() {
-        asyncStub.health(new HealthStreamObserver()).onNext(Sdk.Empty.newBuilder().build());
+        StreamObserver<Sdk.Empty> healthStream = asyncStub.health(new HealthStreamObserver());
+        healthStream.onNext(Sdk.Empty.newBuilder().build());
+        healthStream.onCompleted();
     }
 
     /**
@@ -65,7 +64,6 @@ public class AgonesSDK {
      * it will be moved back to Ready state.
      *
      * @param seconds the amount of seconds to reserve for
-     *
      * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#reserveseconds">https://agones.dev/site/docs/guides/client-sdks/</a>
      */
     public void reserve(long seconds) {
@@ -96,7 +94,6 @@ public class AgonesSDK {
      * This returns most of the backing GameServer configuration and Status.
      *
      * @return backing GameServer stored in Kubernetes
-     *
      * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#gameserver">https://agones.dev/site/docs/guides/client-sdks/</a>
      */
     public GameServer gameServer() {
@@ -108,7 +105,6 @@ public class AgonesSDK {
      * details whenever the underlying GameServer configuration is updated.
      *
      * @param streamObserver the streamobserver to call
-     *
      * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#watchgameserverfunctiongameserver">https://agones.dev/site/docs/guides/client-sdks/</a>
      */
     public void watchGameServer(StreamObserver<GameServer> streamObserver) {
@@ -121,7 +117,6 @@ public class AgonesSDK {
      *
      * @param label the label on the backing record
      * @param value the value to set on the record
-     *
      * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#setlabelkey-value">https://agones.dev/site/docs/guides/client-sdks/</a>
      */
     public void setLabel(String label, String value) {
@@ -133,8 +128,7 @@ public class AgonesSDK {
      * record that is stored in Kubernetes.
      *
      * @param annotation the label on the backing record
-     * @param value the value to set on the record
-     *
+     * @param value      the value to set on the record
      * @see <a href="https://agones.dev/site/docs/guides/client-sdks/#setannotationkey-value">https://agones.dev/site/docs/guides/client-sdks/</a>
      */
     public void setAnnotation(String annotation, String value) {
