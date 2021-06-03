@@ -4,7 +4,7 @@ on:
   push:
     branches-ignore:
       - main
-  pull_request:
+#  pull_request:
 
 jobs:
   maven:
@@ -26,4 +26,4 @@ jobs:
           distribution: 'adopt'
 
       - name: Publish package
-        run: mvn package
+        run: mvn package -DskipTests
