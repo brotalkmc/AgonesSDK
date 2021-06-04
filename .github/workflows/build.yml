@@ -12,7 +12,7 @@ jobs:
 
     permissions:
       contents: read
-      packages: write
+      packages: read
 
     steps:
       - name: Checkout
@@ -26,4 +26,5 @@ jobs:
           distribution: 'adopt'
 
       - name: Publish package
+        # These tests are not automated, skip them when ran
         run: mvn package -DskipTests
