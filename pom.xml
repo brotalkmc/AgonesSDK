@@ -6,7 +6,7 @@
 
     <groupId>fun.reallyisnt.oms</groupId>
     <artifactId>agonessdk</artifactId>
-    <version>1.3</version>
+    <version>1.4</version>
 
     <name>AgonesSDK</name>
 
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.17.2</version>
+            <version>3.17.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
