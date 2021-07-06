@@ -6,7 +6,7 @@
 
     <groupId>fun.reallyisnt.oms</groupId>
     <artifactId>agonessdk</artifactId>
-    <version>1.5</version>
+    <version>1.6</version>
 
     <name>AgonesSDK</name>
 
@@ -14,6 +14,7 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <grpc.version>1.39.0</grpc.version>
     </properties>
 
     <pluginRepositories>
@@ -35,26 +36,26 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
-            <version>1.38.1</version>
+            <version>${grpc.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
-            <version>1.38.1</version>
+            <version>${grpc.version}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>${grpc.version}</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>3.17.3</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty</artifactId>
-            <version>1.38.1</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -66,7 +67,7 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
-            <version>1.38.1</version>
+            <version>${grpc.version}</version>
             <scope>test</scope>
         </dependency>
 
