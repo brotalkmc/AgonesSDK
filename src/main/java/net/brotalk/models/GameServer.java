@@ -1,9 +1,9 @@
-package fun.reallyisnt.oms.models;
+package net.brotalk.models;
 
 import agones.dev.sdk.Sdk;
-import fun.reallyisnt.oms.models.meta.ObjectMeta;
-import fun.reallyisnt.oms.models.spec.GameServerSpec;
-import fun.reallyisnt.oms.models.status.Status;
+import net.brotalk.models.meta.ObjectMeta;
+import net.brotalk.models.spec.GameServerSpec;
+import net.brotalk.models.status.Status;
 
 public class GameServer {
 

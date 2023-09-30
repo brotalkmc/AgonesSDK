@@ -3,13 +3,14 @@
 An SDK powered by gRPC and Protobuf to communicate with the Agones sidecar.
 
 ## Example
-This example covers a bit of the instantiation of the SDK and all the calls it currently covers 
+This example covers a bit of the instantiation of the SDK and all the calls it currently covers
 
 ```java
-package fun.reallyisnt.oms;
+package net.brotalk.oms;
 
-import fun.reallyisnt.oms.alpha.Alpha;
-import fun.reallyisnt.oms.models.GameServer;
+import net.brotalk.AgonesSDK;
+import net.brotalk.alpha.Alpha;
+import models.net.brotalk.GameServer;
 import io.grpc.stub.StreamObserver;
 
 import java.util.List;

@@ -1,12 +1,11 @@
-package fun.reallyisnt.oms;
+package net.brotalk;
 
 import agones.dev.sdk.SDKGrpc;
 import agones.dev.sdk.Sdk;
-import fun.reallyisnt.oms.alpha.Alpha;
-import fun.reallyisnt.oms.health.HealthStreamObserver;
-import fun.reallyisnt.oms.models.GameServer;
-import fun.reallyisnt.oms.models.StreamObserverWrapper;
-import io.grpc.Channel;
+import net.brotalk.alpha.Alpha;
+import net.brotalk.health.HealthStreamObserver;
+import net.brotalk.models.GameServer;
+import net.brotalk.models.StreamObserverWrapper;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;

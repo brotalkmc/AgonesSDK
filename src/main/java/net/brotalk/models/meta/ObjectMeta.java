@@ -1,4 +1,4 @@
-package fun.reallyisnt.oms.models.meta;
+package net.brotalk.models.meta;
 
 import agones.dev.sdk.Sdk;
 

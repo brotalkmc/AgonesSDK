@@ -1,4 +1,4 @@
-package fun.reallyisnt.oms.models;
+package net.brotalk.models;
 
 import agones.dev.sdk.Sdk;
 import io.grpc.stub.StreamObserver;

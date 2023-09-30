@@ -1,4 +1,4 @@
-package fun.reallyisnt.oms.alpha;
+package net.brotalk.alpha;
 
 import agones.dev.sdk.alpha.SDKGrpc;
 import io.grpc.Channel;

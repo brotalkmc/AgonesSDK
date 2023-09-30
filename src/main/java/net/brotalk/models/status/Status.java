@@ -1,4 +1,4 @@
-package fun.reallyisnt.oms.models.status;
+package net.brotalk.models.status;
 
 import agones.dev.sdk.Sdk;
 

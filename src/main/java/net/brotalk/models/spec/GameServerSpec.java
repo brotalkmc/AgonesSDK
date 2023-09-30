@@ -1,4 +1,4 @@
-package fun.reallyisnt.oms.models.spec;
+package net.brotalk.models.spec;
 
 import agones.dev.sdk.Sdk;
 

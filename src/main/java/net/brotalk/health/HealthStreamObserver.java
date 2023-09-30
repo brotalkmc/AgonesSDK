@@ -1,4 +1,4 @@
-package fun.reallyisnt.oms.health;
+package net.brotalk.health;
 
 import agones.dev.sdk.Sdk;
 

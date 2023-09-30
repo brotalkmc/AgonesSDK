@@ -1,6 +1,6 @@
-package fun.reallyisnt.oms;
+package net.brotalk;
 
-import fun.reallyisnt.oms.models.GameServer;
+import net.brotalk.models.GameServer;
 import io.grpc.stub.StreamObserver;
 import org.junit.Assert;
 import org.junit.Test;
