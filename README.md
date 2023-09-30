@@ -6,7 +6,7 @@ An SDK powered by gRPC and Protobuf to communicate with the Agones sidecar.
 This example covers a bit of the instantiation of the SDK and all the calls it currently covers
 
 ```java
-package net.brotalk.oms;
+package net.brotalk;
 
 import net.brotalk.AgonesSDK;
 import net.brotalk.alpha.Alpha;
