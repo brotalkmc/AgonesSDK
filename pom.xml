@@ -17,13 +17,6 @@
         <grpc.version>1.58.0</grpc.version>
     </properties>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>maven-snapshot</id>
-            <url>https://repository.apache.org/content/repositories/snapshots/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <distributionManagement>
         <repository>
             <id>github</id>
@@ -85,7 +78,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.1-SNAPSHOT</version>
+                <version>3.5.1</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
