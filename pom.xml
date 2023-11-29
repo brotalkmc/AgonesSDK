@@ -14,7 +14,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <grpc.version>1.59.0</grpc.version>
+        <grpc.version>1.59.1</grpc.version>
     </properties>
 
     <distributionManagement>
